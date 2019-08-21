@@ -1,0 +1,42 @@
+from dummy import *
+
+'''ip_list ={}
+for item in lis:
+   if item['id'] in ip_list.keys():
+      print "id already present"
+   else:
+      ip_list[item['id']] = item['details']['ip']
+
+with open('/home/cohesity/ip_list_file_1', 'a') as f:
+   f.write(str(ip_list))'''
+
+ips = []
+ip_dict={}
+for item in li:
+   for key, value in item.items():
+      if key in ip_dict.keys():
+         print "id exists"
+         print key
+      else:
+         ip_dict[key] = value
+         ips.append(value)
+
+print len(ips)
+def Repeat(x):
+   _size = len(x)
+   repeated = []
+   for i in range(_size):
+       k = i + 1
+       for j in range(k, _size):
+           if x[i] == x[j] and x[i] not in repeated:
+              #print x[i]
+              repeated.append(x[i])
+   return repeated
+
+dup = Repeat(ips)
+result_dict={}
+for key,value in ip_dict.items():
+   if value in dup:
+      result_dict[key]=value
+
+print result_dict
